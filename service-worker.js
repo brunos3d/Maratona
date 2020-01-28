@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Maratona/precache-manifest.dd15b717bba56e0f8492f37b494c9c9e.js"
+  "/Maratona/precache-manifest.9dfa5b33d9594451eeb61c0bd6b595c3.js"
 );
 
 self.addEventListener('message', (event) => {
