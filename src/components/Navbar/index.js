@@ -7,6 +7,7 @@ export default function Navbar({ playURL }) {
     function handleSubmit(event) {
         event.preventDefault();
         playURL(url);
+        setUrl("");
     }
 
     function handleInputChange(event) {

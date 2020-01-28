@@ -4,13 +4,12 @@ import "./styles/App.css";
 import Navbar from "./components/Navbar";
 
 function App() {
-    const [current, setCurrent] = useState();
+    const [current, setCurrent] = useState(0);
     const [playlist, setPlaylist] = useState([]);
 
     function playURL(url) {
         setCurrent(0);
-        setPlaylist([url]);
-        console.log(url);
+        setPlaylist([url, ...playlist]);
     }
 
     return (
@@ -18,10 +17,11 @@ function App() {
             <Navbar playURL={playURL} />
 
             <div className="theater">
-                {/* preload="metadata" */}
                 <video id="video-component" src={playlist[current]} controls autoPlay />
             </div>
+
             <h1>{playlist[current]}</h1>
+            {playlist && playlist.map((video_url, id) => id > 0 && <p key={id}>{video_url}</p>)}
         </div>
     );
 }
