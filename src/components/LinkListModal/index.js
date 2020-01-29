@@ -9,10 +9,17 @@ export default function LinkListModal({ setPlaylist, closeModal }) {
 
     // test
     React.useEffect(() => {
-        updateUrlList(
-            "http://media.w3.org/2010/05/sintel/trailer.mp4,\nhttp://media.w3.org/2010/05/bunny/trailer.mp4\nhttp://media.w3.org/2010/05/bunny/movie.mp4"
-        );
-    }, []);
+        const list_text =
+            "http://media.w3.org/2010/05/sintel/trailer.mp4,\nhttp://media.w3.org/2010/05/bunny/trailer.mp4\nhttp://media.w3.org/2010/05/bunny/movie.mp4";
+        updateUrlList(list_text);
+
+        // if (process.env.NODE_ENV === "development") {
+        //     const url_list = list_text.split(/[\n ,]+/).filter(item => validator.isURL(item));
+
+        //     setPlaylist(url_list);
+        //     closeModal();
+        // }
+    }, [setPlaylist, closeModal]);
 
     function playButtonHandle(event) {
         setPlaylist(urlList);

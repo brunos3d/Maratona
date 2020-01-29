@@ -18,7 +18,7 @@ export default function Navbar({ playlistAdd }) {
     return (
         <Container>
             <div className="layout">
-                <h1>start</h1>
+                <h1>Maratona</h1>
                 <form onSubmit={handleSubmit}>
                     <input type="url" value={url} onChange={handleInputChange} placeholder="Insert your video url..." />
                     <input type="submit" value="Add" />
