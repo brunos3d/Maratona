@@ -31,6 +31,12 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
+/*!
+ * github-buttons v2.6.0
+ * (c) 2019 なつき
+ * @license BSD-2-Clause
+ */
+
 /** @license React v16.12.0
  * react-is.production.min.js
  *
