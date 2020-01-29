@@ -16,8 +16,10 @@ export const Container = styled.div`
     }
 
     #video-component {
+        width: 100%;
         height: 100%;
-        width: auto;
+
         outline: none;
+        background-color: #000;
     }
 `;
