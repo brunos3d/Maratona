@@ -38,14 +38,6 @@ export const Container = styled.div`
         line-height: 2.4rem;
     }
 
-    label {
-        display: flex;
-        flex-direction: row;
-
-        margin: 5px 0;
-        justify-content: space-between;
-    }
-
     .playlist-queue {
         flex: 1;
         list-style: none;

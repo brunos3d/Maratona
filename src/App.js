@@ -65,14 +65,8 @@ function App() {
                 </div>
 
                 <div className="playlist-controls-container">
-                    <label>
-                        <span>Autoplay</span>
-                        <Switch checked={autoplay} onChange={() => setAutoplay(!autoplay)} />
-                    </label>
-                    <label>
-                        <span>Load next</span>
-                        <Switch checked={loadNext} onChange={() => setLoadNext(!loadNext)} />
-                    </label>
+                    <Switch label="Autoplay" checked={autoplay} onChange={() => setAutoplay(!autoplay)} />
+                    <Switch label="Load Next" checked={loadNext} onChange={() => setLoadNext(!loadNext)} />
                 </div>
             </InfoContainer>
         </div>

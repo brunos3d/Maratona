@@ -90,7 +90,7 @@ export const Container = styled.div`
         resize: none;
 
         padding: 5px;
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .play {
