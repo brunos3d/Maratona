@@ -53,4 +53,16 @@ export const Container = styled.div`
         border: 1px solid #393939;
         background-color: #393939;
     }
+
+    .github-buttons {
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .github-buttons > * {
+        margin-left: 5px;
+    }
 `;
