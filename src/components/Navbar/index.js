@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import "./styles.css";
 
-export default function Navbar({ playURL }) {
+import { Container } from "./styles";
+
+export default function Navbar({ playlistAdd }) {
     const [url, setUrl] = useState("");
 
     function handleSubmit(event) {
         event.preventDefault();
-        playURL(url);
+        playlistAdd(url);
         setUrl("");
     }
 
@@ -15,7 +16,7 @@ export default function Navbar({ playURL }) {
     }
 
     return (
-        <div className="navbar">
+        <Container>
             <div className="layout">
                 <h1>start</h1>
                 <form onSubmit={handleSubmit}>
@@ -24,6 +25,6 @@ export default function Navbar({ playURL }) {
                 </form>
                 <h1>end</h1>
             </div>
-        </div>
+        </Container>
     );
 }
