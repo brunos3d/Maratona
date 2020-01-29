@@ -8,8 +8,9 @@ export default function Navbar({ playlistAdd }) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        playlistAdd(url);
-        setUrl("");
+        if (playlistAdd(url)) {
+            setUrl("");
+        }
     }
 
     function handleInputChange(event) {

@@ -1,3 +1,4 @@
+import validator from "validator";
 import React, { useState } from "react";
 import OnVisible from "react-on-visible";
 
@@ -18,7 +19,11 @@ function App() {
     const [displayModal, setDisplayModal] = useState(!(playlist && playlist.length > 0));
 
     function playlistAdd(url) {
-        setPlaylist([...playlist, url]);
+        if (validator.isURL(url)) {
+            setPlaylist([...playlist, url]);
+            return true;
+        }
+        return false;
     }
 
     function onEndedHandler(event) {
@@ -42,9 +47,11 @@ function App() {
 
     return (
         <div id="app">
+            {displayModal && <LinkListModal setPlaylist={setPlaylist} closeModal={() => setDisplayModal(false)} />}
+
             <Navbar playlistAdd={playlistAdd} />
 
-            {displayModal && <LinkListModal setPlaylist={setPlaylist} closeModal={() => setDisplayModal(false)} />}
+            <div className="navbar-space" style={{ height: "56px" }}></div>
 
             <VideoTheater source={playlist[current]} onEnded={onEndedHandler} autoPlay={autoplay} />
 
