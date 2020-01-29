@@ -80,9 +80,15 @@ export const Container = styled.div`
         background-color: #393939;
     }
 
+    .video-preview-container {
+        width: 150px;
+        height: 95px;
+        background-color: #000;
+    }
+
     .video-preview {
-        width: auto;
-        height: 100px;
+        width: 100%;
+        height: 100%;
         object-fit: contain;
     }
 

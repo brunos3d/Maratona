@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import OnVisible from "react-on-visible";
+
 import "./styles/App.css";
 
 import Navbar from "./components/Navbar";
@@ -29,6 +31,15 @@ function App() {
         }
     }
 
+    const VideoThumbnail = ({ videoUrl }) => {
+        const [visible, setVisible] = useState(false);
+        return (
+            <OnVisible className="video-preview-container" onChange={setVisible}>
+                {visible && <video className="video-preview" src={videoUrl + "#t=3"} autoPlay={false} controls={false} preload="metadata" />}
+            </OnVisible>
+        );
+    };
+
     return (
         <div id="app">
             <Navbar playlistAdd={playlistAdd} />
@@ -45,13 +56,7 @@ function App() {
                             playlist.map((video_url, id) => (
                                 <li className={`playlist-queue-item ${id === current && "current"}`} key={id}>
                                     <button className="playlist-video-button" onClick={() => setCurrent(id)}>
-                                        <video
-                                            className="video-preview"
-                                            src={video_url + "#t=3"}
-                                            autoPlay={false}
-                                            controls={false}
-                                            preload="metadata"
-                                        />
+                                        <VideoThumbnail videoUrl={video_url} />
                                         <span className="video-url">{video_url}</span>
                                     </button>
                                 </li>
