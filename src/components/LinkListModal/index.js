@@ -9,7 +9,9 @@ export default function LinkListModal({ setPlaylist, closeModal }) {
 
     // test
     React.useEffect(() => {
-        updateUrlList("https://www.w3schools.com/html/mov_bbb.mp4, https://flatschart.com/html5/videos/video.m4v");
+        updateUrlList(
+            "http://media.w3.org/2010/05/sintel/trailer.mp4,\nhttp://media.w3.org/2010/05/bunny/trailer.mp4\nhttp://media.w3.org/2010/05/bunny/movie.mp4\nhttps://www.w3schools.com/html/mov_bbb.mp4, https://flatschart.com/html5/videos/video.m4v"
+        );
     }, []);
 
     function playButtonHandle(event) {
