@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Maratona/static/css/main.a158e5f0.chunk.css",
-    "main.js": "/Maratona/static/js/main.fc036f4b.chunk.js",
-    "main.js.map": "/Maratona/static/js/main.fc036f4b.chunk.js.map",
+    "main.css": "/Maratona/static/css/main.87d22a30.chunk.css",
+    "main.js": "/Maratona/static/js/main.e076f6e0.chunk.js",
+    "main.js.map": "/Maratona/static/js/main.e076f6e0.chunk.js.map",
     "runtime-main.js": "/Maratona/static/js/runtime-main.0b992183.js",
     "runtime-main.js.map": "/Maratona/static/js/runtime-main.0b992183.js.map",
-    "static/js/2.a966b81e.chunk.js": "/Maratona/static/js/2.a966b81e.chunk.js",
-    "static/js/2.a966b81e.chunk.js.map": "/Maratona/static/js/2.a966b81e.chunk.js.map",
+    "static/js/2.ef029180.chunk.js": "/Maratona/static/js/2.ef029180.chunk.js",
+    "static/js/2.ef029180.chunk.js.map": "/Maratona/static/js/2.ef029180.chunk.js.map",
     "index.html": "/Maratona/index.html",
-    "precache-manifest.9dfa5b33d9594451eeb61c0bd6b595c3.js": "/Maratona/precache-manifest.9dfa5b33d9594451eeb61c0bd6b595c3.js",
+    "precache-manifest.4a6ca85bcc51976a52b0c87c12f2d352.js": "/Maratona/precache-manifest.4a6ca85bcc51976a52b0c87c12f2d352.js",
     "service-worker.js": "/Maratona/service-worker.js",
-    "static/css/main.a158e5f0.chunk.css.map": "/Maratona/static/css/main.a158e5f0.chunk.css.map",
-    "static/js/2.a966b81e.chunk.js.LICENSE": "/Maratona/static/js/2.a966b81e.chunk.js.LICENSE"
+    "static/css/main.87d22a30.chunk.css.map": "/Maratona/static/css/main.87d22a30.chunk.css.map",
+    "static/js/2.ef029180.chunk.js.LICENSE": "/Maratona/static/js/2.ef029180.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.0b992183.js",
-    "static/js/2.a966b81e.chunk.js",
-    "static/css/main.a158e5f0.chunk.css",
-    "static/js/main.fc036f4b.chunk.js"
+    "static/js/2.ef029180.chunk.js",
+    "static/css/main.87d22a30.chunk.css",
+    "static/js/main.e076f6e0.chunk.js"
   ]
 }
