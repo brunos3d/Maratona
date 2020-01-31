@@ -17,7 +17,8 @@ export const Container = styled.div`
         flex: 1;
         margin-right: 20px;
 
-        padding: 10px;
+        padding: 10px 0;
+        border-radius: 5px;
         border: 1px solid #393939;
     }
 
@@ -30,15 +31,18 @@ export const Container = styled.div`
         flex-direction: column;
 
         padding: 10px;
+        border-radius: 5px;
         border: 1px solid #393939;
     }
 
     .current-video-title {
+        margin-left: 15px;
         font-size: 1.25rem;
         line-height: 2.4rem;
     }
 
     .playlist-queue {
+        margin-top: 15px;
         flex: 1;
         list-style: none;
 
@@ -56,7 +60,7 @@ export const Container = styled.div`
 
     .playlist-video-button {
         width: 100%;
-        padding: 5px 10px;
+        padding: 5px 15px;
 
         border: none;
         background: none;
@@ -73,15 +77,19 @@ export const Container = styled.div`
     }
 
     .video-preview-container {
-        position: relative;
         width: 150px;
         height: 95px;
+        position: relative;
+
+        border-radius: 5px;
         background-color: #000;
     }
 
     .video-preview {
         width: 100%;
         height: 100%;
+
+        border-radius: 5px;
         object-fit: contain;
     }
 
