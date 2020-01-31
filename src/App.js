@@ -18,6 +18,7 @@ function App() {
     const [autoplay, setAutoplay] = useState(true);
     const [loadNext, setLoadNext] = useState(true);
     const [theaterMode, setTheaterMode] = useState(true);
+    const [showThumbnail, setShowThumbnail] = useState(true);
     const [displayModal, setDisplayModal] = useState(!(playlist && playlist.length > 0));
 
     function playlistAdd(url) {
@@ -44,7 +45,7 @@ function App() {
 
         return (
             <OnVisible className="video-preview-container" onChange={setVisible}>
-                {visible && (
+                {visible && showThumbnail && (
                     <>
                         <video
                             className="video-preview"
@@ -99,6 +100,7 @@ function App() {
                         <Switch label="Autoplay" checked={autoplay} onChange={() => setAutoplay(!autoplay)} />
                         <Switch label="Load Next" checked={loadNext} onChange={() => setLoadNext(!loadNext)} />
                         <Switch label="Theater Mode" checked={theaterMode} onChange={() => setTheaterMode(!theaterMode)} />
+                        <Switch label="Show Thumbnail" checked={showThumbnail} onChange={() => setShowThumbnail(!showThumbnail)} />
                     </div>
                 </InfoContainer>
             </PageContainer>
