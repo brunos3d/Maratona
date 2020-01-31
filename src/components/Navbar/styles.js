@@ -8,7 +8,7 @@ export const Container = styled.div`
         width: 100%;
         height: 56px;
         background-color: #282828;
-        z-index: 1;
+        z-index: 5;
     }
 
     .layout {
