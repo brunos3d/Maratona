@@ -73,6 +73,7 @@ export const Container = styled.div`
     }
 
     .video-preview-container {
+        position: relative;
         width: 150px;
         height: 95px;
         background-color: #000;
@@ -82,6 +83,28 @@ export const Container = styled.div`
         width: 100%;
         height: 100%;
         object-fit: contain;
+    }
+
+    .overlay-info-container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: #fff; */
+        z-index: 1;
+    }
+
+    .overlay-info-time {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+
+        padding: 5px;
+        background-color: rgba(0, 0, 0, 0.85);
+
+        color: #fff;
+        font-size: 0.8rem;
+        border-radius: 5px;
     }
 
     .video-url {

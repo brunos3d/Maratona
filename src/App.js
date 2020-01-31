@@ -38,9 +38,25 @@ function App() {
 
     const VideoThumbnail = ({ videoUrl }) => {
         const [visible, setVisible] = useState(false);
+        const [videoDuration, setVideoDuration] = useState(0);
+
         return (
             <OnVisible className="video-preview-container" onChange={setVisible}>
-                {visible && <video className="video-preview" src={videoUrl + "#t=3"} autoPlay={false} controls={false} preload="metadata" />}
+                {visible && (
+                    <>
+                        <video
+                            className="video-preview"
+                            src={videoUrl + "#t=3"}
+                            autoPlay={false}
+                            controls={false}
+                            preload="metadata"
+                            onLoadedMetadata={event => setVideoDuration(event.target.duration)}
+                        />
+                        <div className="overlay-info-container">
+                            <span className="overlay-info-time">{new Date(videoDuration * 1000).toISOString().substr(11, 8)}</span>
+                        </div>
+                    </>
+                )}
             </OnVisible>
         );
     };
