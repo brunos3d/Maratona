@@ -3,10 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
     /* .theater { */
     & {
-        width: 100%;
-        height: 70%;
+        flex: 1;
+        width: ${({ theaterMode }) => (theaterMode ? "100%" : "50%")};
+        height: ${({ theaterMode }) => (theaterMode ? "70%" : "unset")};
+        max-height: ${({ theaterMode }) => (theaterMode ? "unset" : "70%")};
 
         background-color: #000;
+
+        align-self: flex-start;
 
         display: flex;
         flex-direction: column;

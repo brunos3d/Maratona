@@ -9,13 +9,15 @@ import Switch from "./components/Switch";
 import VideoTheater from "./components/VideoTheater";
 import LinkListModal from "./components/LinkListModal";
 
-import { Container as InfoContainer } from "./components/Info/styles";
+import PageContainer from "./components/PageContainer";
+import InfoContainer from "./components/InfoContainer";
 
 function App() {
     const [current, setCurrent] = useState(0);
     const [playlist, setPlaylist] = useState([]);
     const [autoplay, setAutoplay] = useState(true);
     const [loadNext, setLoadNext] = useState(true);
+    const [theaterMode, setTheaterMode] = useState(true);
     const [displayModal, setDisplayModal] = useState(!(playlist && playlist.length > 0));
 
     function playlistAdd(url) {
@@ -74,29 +76,32 @@ function App() {
 
             <div className="navbar-space" style={{ height: "56px" }}></div>
 
-            <VideoTheater source={playlist[current]} onEnded={onEndedHandler} autoPlay={autoplay} />
+            <PageContainer theaterMode={theaterMode}>
+                <VideoTheater source={playlist[current]} onEnded={onEndedHandler} autoPlay={autoplay} theaterMode={theaterMode} />
 
-            <InfoContainer>
-                <div className="video-info-container ">
-                    <span className="current-video-title">{playlist[current]}</span>
-                    <ul className="playlist-queue">
-                        {playlist &&
-                            playlist.map((video_url, id) => (
-                                <li className={`playlist-queue-item ${id === current && "current"}`} key={id}>
-                                    <button className="playlist-video-button" onClick={() => setCurrent(id)}>
-                                        <VideoThumbnail videoUrl={video_url} />
-                                        <span className="video-url">{video_url}</span>
-                                    </button>
-                                </li>
-                            ))}
-                    </ul>
-                </div>
+                <InfoContainer theaterMode={theaterMode}>
+                    <div className="video-info-container ">
+                        <span className="current-video-title">{playlist[current]}</span>
+                        <ul className="playlist-queue">
+                            {playlist &&
+                                playlist.map((video_url, id) => (
+                                    <li className={`playlist-queue-item ${id === current && "current"}`} key={id}>
+                                        <button className="playlist-video-button" onClick={() => setCurrent(id)}>
+                                            <VideoThumbnail videoUrl={video_url} />
+                                            <span className="video-url">{video_url}</span>
+                                        </button>
+                                    </li>
+                                ))}
+                        </ul>
+                    </div>
 
-                <div className="playlist-controls-container">
-                    <Switch label="Autoplay" checked={autoplay} onChange={() => setAutoplay(!autoplay)} />
-                    <Switch label="Load Next" checked={loadNext} onChange={() => setLoadNext(!loadNext)} />
-                </div>
-            </InfoContainer>
+                    <div className="playlist-controls-container">
+                        <Switch label="Autoplay" checked={autoplay} onChange={() => setAutoplay(!autoplay)} />
+                        <Switch label="Load Next" checked={loadNext} onChange={() => setLoadNext(!loadNext)} />
+                        <Switch label="Theater Mode" checked={theaterMode} onChange={() => setTheaterMode(!theaterMode)} />
+                    </div>
+                </InfoContainer>
+            </PageContainer>
         </div>
     );
 }

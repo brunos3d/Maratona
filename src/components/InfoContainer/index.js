@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export default styled.div`
     & {
-        max-width: 1200px;
-
-        margin: 0 auto;
+        max-width: ${({ theaterMode }) => (theaterMode ? "1200px" : "unset")};
+        margin: ${({ theaterMode }) => (theaterMode ? "0 auto" : "0 20px")};
         padding: 10px 0 0 8px;
 
         display: flex;
-        flex-direction: row;
 
-        justify-content: space-between;
+        flex-direction: ${({ theaterMode }) => (theaterMode ? "row" : "column-reverse")};
+        justify-content: ${({ theaterMode }) => (theaterMode ? "space-between" : "unset")};
     }
 
     .video-info-container {
-        flex: 1;
-        margin-right: 20px;
+        /* flex: 1; */
+        margin-top: ${({ theaterMode }) => (theaterMode ? "unset" : "20px")};
+        margin-right: ${({ theaterMode }) => (theaterMode ? "20px" : "unset")};
 
         padding: 10px 0;
         border-radius: 5px;
@@ -36,7 +36,7 @@ export const Container = styled.div`
     }
 
     .current-video-title {
-        margin-left: 15px;
+        margin: 0 15px;
         font-size: 1.25rem;
         line-height: 2.4rem;
     }
@@ -116,5 +116,6 @@ export const Container = styled.div`
     }
 
     .video-url {
+        margin-left: 30px;
     }
 `;
