@@ -25,7 +25,7 @@ export default styled.div`
     .playlist-controls-container {
         width: 200px;
 
-        align-self: flex-start;
+        align-self: ${({ theaterMode }) => (theaterMode ? "flex-start" : "flex-end")};
 
         display: flex;
         flex-direction: column;
@@ -42,6 +42,9 @@ export default styled.div`
     }
 
     .playlist-queue {
+        height: 300px;
+
+        overflow: auto;
         margin-top: 15px;
         flex: 1;
         list-style: none;

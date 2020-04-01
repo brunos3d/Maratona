@@ -17,7 +17,7 @@ function App() {
     const [playlist, setPlaylist] = useState([]);
     const [autoplay, setAutoplay] = useState(true);
     const [loadNext, setLoadNext] = useState(true);
-    const [theaterMode, setTheaterMode] = useState(true);
+    const [theaterMode, setTheaterMode] = useState(!true);
     const [showThumbnail, setShowThumbnail] = useState(true);
     const [displayModal, setDisplayModal] = useState(!(playlist && playlist.length > 0));
 
